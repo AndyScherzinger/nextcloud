@@ -104,9 +104,9 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.nextcloud.client"
-        minSdkVersion 26
-        targetSdkVersion 35
+        applicationId = "com.nextcloud.client"
+        minSdkVersion = 26
+        targetSdkVersion = 35
         compileSdk = 35
 
         buildConfigField "boolean", "CI", ciBuild.toString()
@@ -120,23 +120,23 @@ android {
 
         // arguments to be passed to functional tests
         if (shotTest) {
-            testInstrumentationRunner "com.karumi.shot.ShotTestRunner"
+            testInstrumentationRunner = "com.karumi.shot.ShotTestRunner"
         } else {
-            testInstrumentationRunner "com.nextcloud.client.TestRunner"
+            testInstrumentationRunner = "com.nextcloud.client.TestRunner"
         }
         testInstrumentationRunnerArgument "TEST_SERVER_URL", "${NC_TEST_SERVER_BASEURL}"
         testInstrumentationRunnerArgument "TEST_SERVER_USERNAME", "${NC_TEST_SERVER_USERNAME}"
         testInstrumentationRunnerArgument "TEST_SERVER_PASSWORD", "${NC_TEST_SERVER_PASSWORD}"
         testInstrumentationRunnerArguments disableAnalytics: "true"
 
-        versionCode versionMajor * 10000000 + versionMinor * 10000 + versionPatch * 100 + versionBuild
+        versionCode = versionMajor * 10000000 + versionMinor * 10000 + versionPatch * 100 + versionBuild
 
         if (versionBuild > 89) {
-            versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+            versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
         } else if (versionBuild > 50) {
-            versionName "${versionMajor}.${versionMinor}.${versionPatch} RC" + (versionBuild - 50)
+            versionName = "${versionMajor}.${versionMinor}.${versionPatch} RC" + (versionBuild - 50)
         } else {
-            versionName "${versionMajor}.${versionMinor}.${versionPatch} Alpha" + (versionBuild + 1)
+            versionName = "${versionMajor}.${versionMinor}.${versionPatch} Alpha" + (versionBuild + 1)
         }
 
         // adapt structure from Eclipse to Gradle/Android Studio expectations;
@@ -158,32 +158,32 @@ android {
         productFlavors {
             // used for f-droid
             generic {
-                applicationId "com.nextcloud.client"
-                dimension "default"
+                applicationId = "com.nextcloud.client"
+                dimension = "default"
             }
 
             gplay {
-                applicationId "com.nextcloud.client"
-                dimension "default"
+                applicationId = "com.nextcloud.client"
+                dimension = "default"
             }
 
             huawei {
-                applicationId "com.nextcloud.client"
-                dimension "default"
+                applicationId = "com.nextcloud.client"
+                dimension = "default"
             }
 
             versionDev {
-                applicationId "com.nextcloud.android.beta"
-                dimension "default"
-                versionCode 20220322
-                versionName "20220322"
+                applicationId = "com.nextcloud.android.beta"
+                dimension = "default"
+                versionCode = 20220322
+                versionName = "20220322"
             }
 
             qa {
-                applicationId "com.nextcloud.android.qa"
-                dimension "default"
-                versionCode 1
-                versionName "1"
+                applicationId = "com.nextcloud.android.qa"
+                dimension = "default"
+                versionCode = 1
+                versionName = "1"
             }
         }
 
