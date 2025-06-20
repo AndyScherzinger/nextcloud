@@ -9,6 +9,50 @@ Sections 1) and 2) are common for any environment. The rest of the sections desc
 If you have any problem, remove the 'android' folder, start again from 1) and work your way down. If something still does not work as described here, please open a new issue describing exactly what you did, what happened, and what should have happened.
 
 
+### Automated Setup Script
+
+We provide a shell script to help automate many of the setup steps described in this document. This script is designed for Linux and macOS environments.
+
+**What the script does:**
+* Checks for essential dependencies like Git and the Android SDK (guiding you if they are missing or misconfigured).
+* Prompts for your GitHub username to help clone your fork of the Nextcloud Android repository.
+* Sets up the `upstream` remote to the official Nextcloud repository.
+* Provides initial build instructions and troubleshooting tips.
+
+**How to run the script:**
+
+1.  **Clone the repository** (if you haven't already). You can clone the main Nextcloud repository or your fork:
+    ```bash
+    # To clone the main repository:
+    git clone https://github.com/nextcloud/android.git
+    cd android
+    ```
+    ```bash
+    # Or, to clone your fork (replace YOUR_USERNAME):
+    git clone https://github.com/YOUR_USERNAME/android.git
+    cd android
+    ```
+
+2.  **Navigate to the scripts directory:**
+    ```bash
+    cd scripts
+    ```
+
+3.  **Make the script executable (if needed):**
+    ```bash
+    chmod +x setup_dev_environment.sh
+    ```
+
+4.  **Run the script:**
+    ```bash
+    ./setup_dev_environment.sh
+    ```
+
+**Important:**
+* Review the script's output carefully and follow any instructions it provides.
+* The manual steps detailed below are still valuable for understanding the entire setup process and can be very helpful for troubleshooting if the script encounters issues or if you want a deeper understanding of each component.
+
+
 ### 0. Common software dependencies.
 
 There are some tools needed, no matter what is your specific IDE or build tool of preference.
